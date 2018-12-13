@@ -1,4 +1,5 @@
 Given("I access the Sparta registration form page") do
+  p @users
   sparta_registration.visit_home_page
   sleep 2
 end
