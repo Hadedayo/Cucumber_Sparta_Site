@@ -32,3 +32,9 @@ Feature: Sparta Registration Site
     And I input information onto all fields on the page
     When I click the sign in button
     Then I receive a message for successful confirmation
+
+    @error_for_mandatory_field
+    Scenario: Should get error when all mandatory fields are empty
+    Given I access the Sparta registration form page
+    When I click the sign in button
+    Then I receive error messages for the mandatory fields

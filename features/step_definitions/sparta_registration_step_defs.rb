@@ -100,7 +100,6 @@ end
 
 When("I click the sign in button") do
   sparta_registration.sign_in
-  expect(sparta_registration.current_url).to eq "https://crispyjourney.herokuapp.com/registration_complete?dob=1995-04-14&customRadioInline1=on&cv=phones.png&streamRadioInline1=on"
 end
 
 Then("I receive a message for successful confirmation") do
@@ -129,4 +128,21 @@ And("I input information onto all fields on the page") do
   sparta_registration.upload_file
   sparta_registration.select_devops_field
   sparta_registration.input_terms_conditions
+end
+
+#////////////////////////////////////////////////////
+
+Then("I receive error messages for the mandatory fields") do
+ expect(sparta_registration.get_first_name_error_message).to eq sparta_registration.invalid_first_name_text
+
+ expect(sparta_registration.get_last_name_error_message).to eq sparta_registration.invalid_last_name_text
+
+ expect(sparta_registration.get_age_error_message).to eq sparta_registration.invalid_age_text
+
+ expect(sparta_registration.is_female_selected).not_to eq true
+
+ expect(sparta_registration.is_male_selected).not_to eq true
+
+ expect(sparta_registration.get_address_error_message).to eq sparta_registration.invalid_address_text
+
 end

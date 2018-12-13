@@ -2,6 +2,19 @@ require 'capybara/dsl'
 
 class Registration
   include Capybara::DSL
+
+  attr_accessor :invalid_first_name_text, :invalid_last_name_text, :invalid_age_text, :invalid_address_text
+
+
+  def initialize
+    @invalid_first_name_text = "Please enter your first name."
+    @invalid_last_name_text = "Please enter your last name."
+    @invalid_age_text = "Please enter your age."
+    @invalid_address_text = "Please enter an address."
+  end
+
+
+
   #Constants
   #PageObjects
   HOMEPAGE_URL = 'https://crispyjourney.herokuapp.com/'
@@ -202,5 +215,23 @@ class Registration
   def sign_in
     find(SUBMIT_ID).click
   end
+
+  def get_first_name_error_message
+    find(:xpath, '/html/body/div/form/div[1]/div/div').text
+  end
+
+  def get_last_name_error_message
+    find(:xpath, '/html/body/div/form/div[2]/div/div').text
+  end
+
+  def get_age_error_message
+    find(:xpath, '/html/body/div/form/div[3]/div/div').text
+  end
+
+  def get_address_error_message
+    find(:xpath, '/html/body/div/form/div[9]/div').text
+  end
+
+
 
 end
