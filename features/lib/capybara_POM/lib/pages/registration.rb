@@ -172,7 +172,7 @@ class Registration
   end
 
   def upload_file
-    find(CV_FIELD).send_keys('C:\Users\Tech-W103\Desktop')
+    find(CV_FIELD).send_keys("C:\\Users\\Tech-W103\\Cucumber_Sparta_Site\\phones.png")
   end
 
   def get_file

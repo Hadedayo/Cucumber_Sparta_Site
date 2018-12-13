@@ -2,7 +2,7 @@ require 'capybara/cucumber'
 require 'rspec'
 require 'capybara/dsl'
 
-#require in the BBC POM
+#require in the Sparta site POM
 require_relative '../lib/capybara_POM/lib/sparta_site'
 
 Capybara.register_driver(:chrome) do |app|
