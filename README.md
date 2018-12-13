@@ -8,9 +8,7 @@ The specifications consists of multiple scenarios to test the Sparta registratio
  
 ## Gherkin
 
-Used to write our requirements in plain text to bridge the gap between the Technical and business streams. This makes it easily readable, transferable, and
-
-the Technical team can execute tests with Cucumber.
+Used to write our requirements in plain text to bridge the gap between the Technical and Business streams. This makes it easily readable, transferable, and the technical team can execute tests with Cucumber.
 
 ## Capybara
 Capybara is a library written in the Ruby programming language which makes it easy to simulate how a user interacts with your application.
